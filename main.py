@@ -1,8 +1,8 @@
 
 import sys
 
-from qtpy.QtWidgets import QApplication, QMainWindow, QFileDialog, QFileSystemModel, QMessageBox
-from qtpy.QtGui import QIcon
+from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
+from PyQt6.QtGui import QIcon, QFileSystemModel
 from ui import Ui_MainWindow
 from functions import speedmult, ispathvalid, config
 
