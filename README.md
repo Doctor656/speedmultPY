@@ -3,6 +3,9 @@ Since somebody made a very slow one-handed animation, this tool appeared.
 Requires hkanno64. Please install a working hkanno64 on your computer.
 
 How to use:
+
+![Tutorial](./readme/turtorial.png?raw=true "Tutorial")
+
 0. run the .bat.
 1. Press "Load" to load the folder that you store your animations files(.hkx). 
 2. input the speed you want. (it will multiply the speed of the animations)
