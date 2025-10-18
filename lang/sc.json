@@ -1,0 +1,16 @@
+{
+  "Author": "Doc656",
+  "hkanno64path": "D:/HKanno64",
+  "Load": "载入",
+  "Speed": "速度:",
+  "Execute": "执行",
+  "changeDir": "hkanno64路径",
+  "Select Folder": "选取档案夹",
+  "Message": "讯息",
+  "Ask Update": "更新.hkx?",
+  "Ask Delete": "删除由hkanno64产生的.txt档案?",
+  "Notification": "动画档案已修改!",
+  "Warning": "警告",
+  "No hkanno64": "目标路径中不存在hkanno64.exe!",
+  "No rootpath": "未选择根路径!"
+}
