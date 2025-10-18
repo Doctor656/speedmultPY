@@ -2,6 +2,7 @@
 import sys
 
 from qtpy.QtWidgets import QApplication, QMainWindow, QFileDialog, QFileSystemModel, QMessageBox
+from qtpy.QtGui import QIcon
 from ui import Ui_MainWindow
 from functions import speedmult, ispathvalid, config
 
@@ -23,6 +24,7 @@ class speedmult_ui(QMainWindow,Ui_MainWindow):
         self.execute_btn.clicked.connect(lambda:self.execute())
         self.changeDir.clicked.connect(lambda: self.changedir())
 
+        self.setWindowIcon(QIcon('icon\\icon.ico'))
         self.setWindowTitle("Speedmult")
         self.load_btn.setText(setting.get("Load"))
         self.label.setText(setting.get("Speed"))
