@@ -25,7 +25,7 @@ class speedmult_ui(QMainWindow,Ui_MainWindow):
         self.execute_btn.clicked.connect(lambda:self.execute())
         self.changeDir.clicked.connect(lambda: self.changedir())
 
-        self.setWindowIcon(QIcon('icon\\icon.ico'))
+        self.setWindowIcon(QIcon('icon.ico'))
         self.setWindowTitle("Speedmult")
         self.load_btn.setText(setting.get("Load"))
         self.label.setText(setting.get("Speed"))

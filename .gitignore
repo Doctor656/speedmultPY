@@ -2,7 +2,7 @@
 !.gitignore
 !*.py
 !*.bat
-!*readme.md
+!*.ico
+!readme.md
 !lang/
-!icon/
 !readme/
