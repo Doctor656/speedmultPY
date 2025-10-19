@@ -109,8 +109,15 @@ def editanno(filename, multiple, update = False,delete = False, hkannopath = "."
         else:
             os.remove(f"{filename}.txt")
 
-def speedmult(directory,multiple,update,delete,hkannopath = "."):
+def inlist(directory,checklist):
+    for i in checklist:
+        if os.path.samefile(directory, i):
+            return True
+    return False
+
+def speedmult(directory,checklist,multiple,update,delete,hkannopath = "."):
     for root, dirs, files in os.walk(directory, topdown=False):
+        files[:] = [name for name in files if not inlist(os.path.join(root, name), checklist)]
         for name in files:
             if  match(r'(?i)BFCO.*\.hkx$', name):
                 editanno(os.path.join(root, name), multiple, update, delete, hkannopath)

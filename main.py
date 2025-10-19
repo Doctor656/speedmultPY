@@ -2,9 +2,10 @@
 import sys
 
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
-from PyQt6.QtGui import QIcon, QFileSystemModel
+from PyQt6.QtGui import QIcon
 from ui import Ui_MainWindow
 from functions import speedmult, ispathvalid, config
+from FSMCheckable import FSM_Checkable
 
 setting = config()
 
@@ -17,7 +18,7 @@ class speedmult_ui(QMainWindow,Ui_MainWindow):
         self.hkannopath = setting.get("hkanno64path")
         self.mbox = QMessageBox(self)
         self.load_dialog = QFileDialog(None)
-        self.model = QFileSystemModel()
+        self.model = FSM_Checkable()
         self.model.setNameFilters(["*.hkx"])
         self.model.setNameFilterDisables(False)
         self.load_btn.clicked.connect(lambda: self.load())
@@ -81,7 +82,7 @@ class speedmult_ui(QMainWindow,Ui_MainWindow):
         else:
             delete = False
 
-        result = speedmult(self.directory,multiple,update,delete,self.hkannopath)
+        result = speedmult(self.directory,self.model.getchecklist(),multiple,update,delete,self.hkannopath)
         if result:
             self.mbox.information(self, setting.get("Message"), setting.get("Notification"))
             self.treeView.setModel(None)
