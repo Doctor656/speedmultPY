@@ -61,7 +61,7 @@ class speedmult_ui(QMainWindow,Ui_MainWindow):
             self.mbox.warning(self,setting.get("Warning"),setting.get("No hkanno64"))
             return None
 
-        multiple = float(self.speed_line.text())
+        multiple = self.speed_line.text()
 
         update = (self.mbox.question(
             self,
@@ -82,11 +82,13 @@ class speedmult_ui(QMainWindow,Ui_MainWindow):
         else:
             delete = False
 
-        result = speedmult(self.directory,self.model.getchecklist(),multiple,update,delete,self.hkannopath)
-        if result:
+        try:
+            speedmult(self.directory,self.model.getchecklist(),multiple,update,delete,self.hkannopath)
             self.mbox.information(self, setting.get("Message"), setting.get("Notification"))
             self.treeView.setModel(None)
             self.directory = ""
+        except:
+            self.mbox.warning(self, setting.get("Warning"), setting.get("Unexpected"))
 
         return None
 
