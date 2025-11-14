@@ -87,9 +87,9 @@ def changespeed(string,multiple):
 
 def editanno(filename, multiple, update = False,delete = False, hkannopath = ".", speedanno = bfco):
     os.chdir(hkannopath)
-    os.system(f"hkanno64.exe dump -o {filename}.txt {filename}")
+    os.system(f"hkanno64.exe dump -o \"{filename}.txt\" \"{filename}\"")
 
-    anno = readfile(f"{filename}.txt")
+    anno = readfile(f"\"{filename}.txt\"")
 
     for i in range(firstline, len(anno)):
         if speedanno in anno[i]:
@@ -98,16 +98,16 @@ def editanno(filename, multiple, update = False,delete = False, hkannopath = "."
     if not (f"0.000000 {speedanno}" in anno[firstline]):
         anno.insert(firstline, f"0.000000 {speedanno}{multiple:g}")
 
-    writefile(f"{filename}.txt", anno)
+    writefile(f"\"{filename}.txt\"", anno)
 
     if update:
-        os.system(f"hkanno64.exe update -i {filename}.txt {filename}")
+        os.system(f"hkanno64.exe update -i \"{filename}.txt\" \"{filename}\"")
 
     if delete:
         if send2trashInstalled:
-            send2trash(f"{filename}.txt")
+            send2trash(f"\"{filename}.txt\"")
         else:
-            os.remove(f"{filename}.txt")
+            os.remove(f"\"{filename}.txt\"")
 
 def inlist(directory,checklist):
     for i in checklist:
