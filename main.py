@@ -87,8 +87,8 @@ class speedmult_ui(QMainWindow,Ui_MainWindow):
             self.mbox.information(self, setting.get("Message"), setting.get("Notification"))
             self.treeView.setModel(None)
             self.directory = ""
-        except:
-            self.mbox.warning(self, setting.get("Warning"), setting.get("Unexpected"))
+        except Exception as e:
+            self.mbox.warning(self, setting.get("Warning"), f"{setting.get('Unexpected')}\n {e}")
 
         return None
 
