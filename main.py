@@ -61,7 +61,7 @@ class speedmult_ui(QMainWindow,Ui_MainWindow):
             self.mbox.warning(self,setting.get("Warning"),setting.get("No hkanno64"))
             return None
 
-        multiple = self.speed_line.text()
+        multiple = float(self.speed_line.text())
 
         update = (self.mbox.question(
             self,
